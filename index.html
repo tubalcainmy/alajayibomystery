@@ -507,6 +507,17 @@ footer{
 .cap-t{font-weight:700;font-size:0.82rem;color:var(--blue-800);margin-bottom:4px;}
 .cap-d{font-size:0.75rem;color:var(--text-2);line-height:1.5;}
 
+/* ── TRUST BAR ── */
+.trust-bar{padding:40px 0 8px;text-align:center;}
+.trust-bar-label{font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-3);margin-bottom:20px;}
+.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:40px;}
+.trust-logos img{height:34px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(100%);opacity:0.55;transition:filter 0.2s,opacity 0.2s;}
+.trust-logos img:hover{filter:grayscale(0%);opacity:1;}
+@media(max-width:768px){.trust-logos{gap:24px;}.trust-logos img{height:26px;max-width:110px;}}
+
+/* ── PROJECT SCREENSHOTS ── */
+.pcard-shot{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:7px;border:1px solid var(--border);margin-bottom:14px;background:var(--bg);}
+
 /* ── AUDIT CTA ── */
 .audit-cta{background:var(--blue-700);border-radius:10px;padding:28px;margin-top:20px;text-align:center;}
 .audit-cta h3{font-family:'Sora',sans-serif;font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:8px;}
@@ -582,6 +593,20 @@ footer{
   <div class="cap"><div class="cap-icon">🔐</div><div class="cap-t">Trust-Based Infrastructure</div><div class="cap-d">Secure marketplaces solving document validation and transparency deficits in high-friction markets</div></div>
 </div>
 
+<!-- TRUSTED BY -->
+<div class="wrap">
+  <div class="trust-bar">
+    <p class="trust-bar-label">Trusted By</p>
+    <div class="trust-logos">
+      <img src="assets/logo-tubalcain.png" alt="Tubalcain Ads Enterprise" loading="lazy">
+      <img src="assets/logo-swiftfifteen.png" alt="Swift Fifteen Express" loading="lazy">
+      <img src="assets/logo-cea.png" alt="Castlerock Econetwork Africa" loading="lazy">
+      <img src="assets/logo-richiesplatform.png" alt="RichiesPlatform" loading="lazy">
+      <img src="assets/logo-5.png" alt="New project" loading="lazy">
+    </div>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <div class="section-divider" style="margin-top:48px;"></div>
 <section id="about">
@@ -618,6 +643,7 @@ footer{
     <div class="projects-grid">
 
       <a class="pcard" href="https://tubalcainmy.github.io/8-gate/" target="_blank" rel="noopener">
+        <img class="pcard-shot" src="assets/shot-8gate.jpg" alt="Tubalcain 8-Gate Lead Qualifier screenshot" loading="lazy">
         <span class="ptag">Solar · Lead Generation</span>
         <div class="stat-highlight">⚡ Filters 65%+ of unqualified leads · Lifts close rate from &lt;10% to 38% · Delivers verified buyers in under 1 second</div>
         <h3>Tubalcain 8-Gate Lead Qualifier</h3>
@@ -628,6 +654,7 @@ footer{
       </a>
 
       <a class="pcard" href="https://swiftfifteenexpress.com/" target="_blank" rel="noopener">
+        <img class="pcard-shot" src="assets/shot-swiftfifteen.jpg" alt="Swift Fifteen Express screenshot" loading="lazy">
         <span class="ptag">Logistics · Delivery</span>
         <div class="stat-highlight">🛵 Order to rider dispatch in under 60 seconds · Zero back-and-forth calls · Zero manual overhead · 9 platforms integrated</div>
         <h3>Zero-Human-Intervention Dispatch Engine</h3>
@@ -638,6 +665,7 @@ footer{
       </a>
 
       <a class="pcard flagship" href="https://ceagroup.org/" target="_blank" rel="noopener">
+        <img class="pcard-shot" src="assets/shot-cea.jpg" alt="Castlerock Econetwork Africa screenshot" loading="lazy">
         <span class="ptag integrity">🏆 Flagship · Trust &amp; Market Infrastructure · PropTech</span>
         <p class="flagship-hook">The primary hurdle in Nigerian real estate is not demand  it is a massive trust deficit caused by fake titles, double allocations, and broken promises. This marketplace was engineered to replace blind trust with document-by-document verified transparency.</p>
         <h3>Castlerock Econetwork Africa  Verified Property Marketplace</h3>
@@ -651,6 +679,7 @@ footer{
       </a>
 
       <a class="pcard" href="https://richiesplatform.github.io/richiesplatform/community" target="_blank" rel="noopener">
+        <img class="pcard-shot" src="assets/shot-richies.jpg" alt="RichiesPlatform screenshot" loading="lazy">
         <span class="ptag">EdTech · Sales Funnel</span>
         <div class="stat-highlight">💳 Recovers leads lost to checkout abandonment · 3 segmented audience tracks · ₦10k–₦50k tiered pricing · Serverless  handles traffic spikes at ₦0</div>
         <h3>Multi-Step Behavioural Sales Funnel  RichiesPlatform</h3>
