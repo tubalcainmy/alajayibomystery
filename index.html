@@ -533,6 +533,49 @@ footer{
 }
 @media(max-width:480px){.caps-strip{grid-template-columns:1fr;}}
 
+/* ── HERO ORDER ON MOBILE ───────────────────────────────
+   On a phone the headshot sits directly under the headline,
+   with the supporting text, quote and buttons stacked beneath
+   it. The text column is a single div, so display:contents
+   lifts its children into the hero grid and lets each one take
+   its own order. Desktop is untouched.
+────────────────────────────────────────────────────────*/
+@media(max-width:768px){
+  .hero{gap:0;}
+  .hero > div:first-child{display:contents;}
+
+  .hero-eyebrow  {order:1;}
+  .hero h1       {order:2;}
+  .portrait-wrap {order:3;}
+  .hero-sub-title{order:4;}
+  .hero-bio      {order:5;}
+  .proof-strip   {order:6;}
+  .hero-btns     {order:7;}
+
+  /* justify-self keeps the pill from stretching the full row */
+  .hero-eyebrow{justify-self:center;margin-bottom:18px;}
+  .hero h1{margin-bottom:0;}
+
+  .portrait-wrap{
+    width:100%;max-width:230px;
+    margin:26px auto 34px;   /* bottom clears the overhanging badge */
+  }
+  .portrait-img{aspect-ratio:3/3.4;height:auto;}
+  .portrait-badge{left:50%;transform:translateX(-50%);bottom:-16px;white-space:nowrap;}
+
+  /* Everything under the image centres on the same axis */
+  .hero-sub-title{margin-bottom:14px;}
+  /* One shared measure, in px, so both blocks line up on the same
+     left and right edges. A ch-based cap would differ between them,
+     because each sits at a different font size. */
+  .hero-bio{max-width:480px;margin-left:auto;margin-right:auto;margin-bottom:22px;}
+  .proof-strip{
+    max-width:480px;margin-left:auto;margin-right:auto;
+    text-align:left;   /* a quote reads better ranged left inside its card */
+  }
+  .hero-btns{justify-content:center;}
+}
+
 </style>
 </head>
 <body>
