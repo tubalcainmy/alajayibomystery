@@ -576,6 +576,68 @@ footer{
   .hero-btns{justify-content:center;}
 }
 
+
+/* ── SERVICES ───────────────────────────────────────── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.svc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;display:flex;flex-direction:column;}
+.svc.flag{border-color:rgba(16,185,129,0.35);box-shadow:0 0 20px rgba(16,185,129,0.05);}
+.svc-pain{font-size:0.8rem;font-style:italic;color:var(--blue-800);background:var(--blue-100);border:1px solid var(--blue-200);border-radius:6px;padding:7px 11px;margin-bottom:14px;line-height:1.5;}
+.svc.flag .svc-pain{color:#047857;background:rgba(16,185,129,0.07);border-color:rgba(16,185,129,0.2);}
+.svc h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;color:var(--blue-900);line-height:1.25;margin-bottom:8px;}
+.svc p{font-size:0.84rem;color:var(--text-2);line-height:1.65;margin-bottom:14px;}
+.svc-proof{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:0.78rem;color:var(--text-3);}
+.svc-proof a{color:var(--blue-600);font-weight:600;text-decoration:none;}
+.svc-proof a:hover{color:var(--blue-800);}
+.svc.flag .svc-proof a{color:#059669;}
+
+/* ── PROJECT: WHAT IT MEANS FOR YOU ── */
+.pfor{background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--blue-500);border-radius:6px;padding:10px 12px;margin:0 0 14px;font-size:0.82rem;color:var(--text);line-height:1.6;}
+.pfor strong{color:var(--blue-800);}
+.pcard.flagship .pfor{border-left-color:#10B981;}
+
+/* ── HOW I WORK ─────────────────────────────────────── */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:step;list-style:none;}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 20px;counter-increment:step;position:relative;}
+.step::before{content:counter(step);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--blue-700);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:14px;}
+.step h3{font-family:'Sora',sans-serif;font-size:0.98rem;font-weight:700;color:var(--blue-900);margin-bottom:6px;}
+.step p{font-size:0.83rem;color:var(--text-2);line-height:1.65;}
+.step a{color:var(--blue-600);font-weight:600;}
+.terms{display:grid;grid-template-columns:repeat(3,1fr);margin-top:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.term{padding:18px 20px;border-right:1px solid var(--border);}
+.term:last-child{border-right:none;}
+.term-k{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue-600);margin-bottom:4px;}
+.term-v{font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:var(--blue-900);line-height:1.3;}
+.term-s{font-size:0.78rem;color:var(--text-2);margin-top:3px;line-height:1.5;}
+
+/* ── SKILLS HEADING + TOOLS LINE ── */
+.skills-h{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;color:var(--blue-900);margin-bottom:12px;grid-column:1/-1;}
+.skill-tools{font-size:0.7rem;color:var(--text-3);margin-top:6px;line-height:1.45;}
+
+/* ── MOBILE MENU ── */
+.nav-toggle{display:none;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .nav-toggle{display:grid;place-items:center;width:42px;height:42px;background:var(--surface);border:1px solid var(--border-2);border-radius:9px;color:var(--blue-900);cursor:pointer;padding:0;}
+  .nav-toggle .bars{position:relative;display:block;width:20px;height:2px;border-radius:2px;background:currentColor;}
+  .nav-toggle .bars::before,.nav-toggle .bars::after{content:"";position:absolute;left:0;width:20px;height:2px;border-radius:2px;background:currentColor;transition:transform .2s ease,top .2s ease;}
+  .nav-toggle .bars::before{top:-6px;}
+  .nav-toggle .bars::after{top:6px;}
+  .nav-toggle[aria-expanded="true"] .bars{background:transparent;}
+  .nav-toggle[aria-expanded="true"] .bars::before{top:0;transform:rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] .bars::after{top:0;transform:rotate(-45deg);}
+  nav.open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:56px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:6px 20px 18px;box-shadow:0 18px 30px -24px rgba(15,23,42,.35);}
+  nav.open .nav-links a{display:block;padding:13px 0;border-bottom:1px solid var(--border);font-size:0.95rem;}
+  nav.open .nav-links li:last-child a{border-bottom:none;margin-top:14px;text-align:center;padding:12px;}
+
+  .svc-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .terms{grid-template-columns:1fr;}
+  .term{border-right:none;border-bottom:1px solid var(--border);}
+  .term:last-child{border-bottom:none;}
+}
+@media(min-width:769px) and (max-width:900px){.svc-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.steps{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -583,11 +645,12 @@ footer{
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Alajayibo Mystery</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span class="bars" aria-hidden="true"></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#tubalcain">Tubalcain</a></li>
-    <li><a href="#hospitality">Hospitality</a></li>
+    <li><a href="#process">How I Work</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#contact" class="nav-cta">Work with me</a></li>
   </ul>
 </nav>
@@ -597,14 +660,14 @@ footer{
   <div class="hero">
     <div>
       <span class="hero-eyebrow">Go-to-Market Engineer · Warri, Nigeria</span>
-      <h1>I Build Systems<br>That Make<br><span>Revenue Happen.</span></h1>
+      <h1>I Build the Systems<br>Behind Your<br><span>Sales.</span></h1>
       <p class="hero-sub-title">Founder, Tubalcain Ads Enterprise</p>
       <p class="hero-bio">
-        My name is <strong>Alajayibo Mystery</strong>. I am a Go-to-Market Engineer specialising in revenue automation, zero-maintenance infrastructure, and operational systems that eliminate friction. I architect end-to-end pipelines across <strong>PropTech, Logistics, Solar Energy, and Hospitality</strong>,  patching revenue leaks, qualifying high-intent leads, and building transactional trust where markets need it most.
+        My name is <strong>Alajayibo Mystery</strong>. I build the funnels, payment flows, follow-up, and automation that turn enquiries into paying customers. I work with Nigerian businesses that already have demand but lose leads, bookings or payments somewhere between the first message and the bank alert, and I've built live systems for <strong>real estate, logistics, solar and education</strong>.
       </p>
       <div class="proof-strip">"Omo! Your speed is something else, man.  I am so impressed with the level of work so far. Well done, my dear brother." <strong>Mr. Alfred. Managing Director - CEA Group</strong></div>
       <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View my work</a>
+        <a href="#services" class="btn-primary">See what I can build</a>
         <a href="https://wa.me/2348029234994?text=Hi Mystery, I visited your portfolio and want to discuss a project" class="btn-secondary" target="_blank" rel="noopener">WhatsApp me</a>
       </div>
     </div>
@@ -612,7 +675,7 @@ footer{
 
       <img class="portrait-img" width="300" height="370" loading="eager" decoding="async" src="assets/og-image.jpg" alt="Alajayibo Mystery — Go-to-Market Engineer, Warri Nigeria">
 
-      <div class="portrait-badge">5 Live<br>Systems Built</div>
+      <div class="portrait-badge">4 Live<br>Systems Built</div>
     </div>
   </div>
 </div>
@@ -620,19 +683,11 @@ footer{
 <!-- STATS -->
 <div class="wrap">
   <div class="stats">
-    <div class="stat"><div class="stat-n">5</div><div class="stat-l">Live GTM systems</div></div>
+    <div class="stat"><div class="stat-n">4</div><div class="stat-l">Live GTM systems</div></div>
     <div class="stat"><div class="stat-n">₦0</div><div class="stat-l">Monthly server cost</div></div>
-    <div class="stat"><div class="stat-n">8-Gate</div><div class="stat-l">Qualifing every lead</div></div>
+    <div class="stat"><div class="stat-n">8-Gate</div><div class="stat-l">Qualifying every lead</div></div>
     <div class="stat"><div class="stat-n">&lt;1s</div><div class="stat-l">Lead delivery speed</div></div>
   </div>
-</div>
-
-<!-- CAPABILITIES -->
-<div class="caps-strip">
-  <div class="cap"><div class="cap-icon">💧</div><div class="cap-t">Revenue Leak Remediation</div><div class="cap-d">Diagnosing and fixing broken user flows, drop-offs, and unoptimised booking processes</div></div>
-  <div class="cap"><div class="cap-icon">⚙️</div><div class="cap-t">Operational Automation</div><div class="cap-d">Connecting forms, payment processors, and fulfilment into seamless 60-second execution loops</div></div>
-  <div class="cap"><div class="cap-icon">🎯</div><div class="cap-t">High-Intent Lead Qualification</div><div class="cap-d">Multi-gate funnels that filter low-quality prospects before they reach your sales team</div></div>
-  <div class="cap"><div class="cap-icon">🔐</div><div class="cap-t">Trust-Based Infrastructure</div><div class="cap-d">Secure marketplaces solving document validation and transparency deficits in high-friction markets</div></div>
 </div>
 
 <!-- TRUSTED BY -->
@@ -644,34 +699,64 @@ footer{
       <img src="assets/logo-swiftfifteen.png" alt="Swift Fifteen Express" loading="lazy">
       <img src="assets/logo-cea.png" alt="Castlerock Econetwork Africa" loading="lazy">
       <img src="assets/logo-richiesplatform.png" alt="RichiesPlatform" loading="lazy">
-      <img src="assets/isdi-logo.png" alt="New project" loading="lazy">
-     <img src="assets/gdgi-logo.png" alt="New project" loading="lazy">
+      <img src="assets/isdi-logo.png" alt="ISDI" loading="lazy">
+     <img src="assets/gdgi-logo.png" alt="GDGI" loading="lazy">
     </div>
   </div>
 </div>
 
-<!-- ABOUT -->
+
+<!-- SERVICES -->
 <div class="section-divider" style="margin-top:48px;"></div>
-<section id="about">
+<section id="services">
   <div class="wrap">
-    <p class="eyebrow">About</p>
-    <h2>Building Blocks Were My<br>First Programming Language.</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I grew up in <strong>Delta State, Nigeria</strong>, in a home where both parents were entrepreneurs. From a young age, I was watching how things worked and asking how I could build something better.</p>
-        <p>When I was a boy, my father gave me building blocks,  and those toys shaped everything. I could build anything I could imagine. That instinct to construct a solution from available pieces has never left me.</p>
-        <blockquote>"As much as I can imagine it, I could build it."</blockquote>
-        <p>After university at <strong>Delta State University of Science and Technology</strong>, I spent two years in a personal development programme that transformed me. I found my direction: creative thinking and systems design applied to real business problems. That led to <strong>Tubalcain Ads Enterprise</strong>  and eventually to Go-to-Market Engineering as a discipline I now apply across industries.</p>
-        <p>My drive is simple. I am here to serve,  channelling ideas into systems that solve business challenges. There is no greater feeling than watching a system I built perform exactly as I designed it.</p>
+    <p class="eyebrow">Services</p>
+    <h2>What I Can Build<br>for Your Business.</h2>
+    <p class="section-sub">Not a strategy deck: the working system, built and handed over. Find the problem that sounds like yours.</p>
+    <div class="svc-grid">
+
+      <div class="svc">
+        <p class="svc-pain">"We call 100 leads just to close 3."</p>
+        <h3>Lead qualification funnels</h3>
+        <p>A qualifier that screens every enquiry on budget, ownership and timeline, so only serious buyers reach your sales team, delivered to WhatsApp in seconds.</p>
+        <div class="svc-proof">Proof: <a href="#p-8gate">8-Gate Lead Qualifier</a>, close rate from under 10% to 38%</div>
       </div>
-      <div class="skills-grid">
-        <div class="skill-card"><div class="skill-card-t">Systems Design</div><div class="skill-card-d">Automated pipelines that run without human intervention</div></div>
-        <div class="skill-card"><div class="skill-card-t">API Integration</div><div class="skill-card-d">Paystack · Kwikpik · Google Maps · Make.com · Cloudflare</div></div>
-        <div class="skill-card"><div class="skill-card-t">Lead Generation</div><div class="skill-card-d">Qualification engines · Facebook ads · Pay-per-lead</div></div>
-        <div class="skill-card"><div class="skill-card-t">Revenue Analytics</div><div class="skill-card-d">GA4 funnels · Facebook Pixel · Conversion optimisation</div></div>
-        <div class="skill-card"><div class="skill-card-t">Zero-Cost Infrastructure</div><div class="skill-card-d">GitHub Pages · Cloudflare Workers · Vercel serverless</div></div>
-        <div class="skill-card"><div class="skill-card-t">Automation</div><div class="skill-card-d">Make.com · Webhook pipelines · SMS sequences</div></div>
+
+      <div class="svc">
+        <p class="svc-pain">"People get to checkout, then vanish."</p>
+        <h3>Payment and checkout systems</h3>
+        <p>Offers matched to each type of buyer, payment collected through Paystack, and anyone who drops off at checkout captured so you can follow up.</p>
+        <div class="svc-proof">Proof: <a href="#p-richies">RichiesPlatform funnel</a>, 3 buyer tracks, no lead lost at checkout</div>
       </div>
+
+      <div class="svc">
+        <p class="svc-pain">"Every order gets confirmed by phone, one at a time."</p>
+        <h3>Order-to-delivery automation</h3>
+        <p>Orders priced, paid for and dispatched automatically. Distance is calculated for you, payment clears before dispatch, and nobody has to make a call.</p>
+        <div class="svc-proof">Proof: <a href="#p-swift">Swift-Fifteen Express</a>, order to rider in under 60 seconds</div>
+      </div>
+
+      <div class="svc flag">
+        <p class="svc-pain">"Buyers don't trust what they see online."</p>
+        <h3>Verified listing and marketplace platforms</h3>
+        <p>Listings checked document by document, tamper-proof listing links and an audit trail on every seller action, so buyers can trust what they're paying for before they pay.</p>
+        <div class="svc-proof">Proof: <a href="#p-cea">Castlerock Econetwork Africa</a>, my flagship verified property marketplace</div>
+      </div>
+
+      <div class="svc">
+        <p class="svc-pain">"Customers book, then don't show up."</p>
+        <h3>Booking systems</h3>
+        <p>Payment at the moment of booking, live availability so nothing is double-booked, add-ons at checkout and a WhatsApp fallback, for hotels, clinics and any appointment business.</p>
+        <div class="svc-proof">Proof: <a href="#hospitality">my audits of Nigerian hotel booking systems</a></div>
+      </div>
+
+      <div class="svc">
+        <p class="svc-pain">"We can't tell which ads actually bring sales."</p>
+        <h3>Follow-up and tracking</h3>
+        <p>SMS and WhatsApp sequences that bring buyers back without anyone chasing, plus GA4 and Pixel tracking from the first ad click to the sale.</p>
+        <div class="svc-proof">Proof: <a href="#tubalcain">30-day SMS re-engagement</a> running on every Tubalcain buyer</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -685,29 +770,31 @@ footer{
     <p class="section-sub">Every project below is live, serving real users, and running at zero monthly server cost.</p>
     <div class="projects-grid">
 
-      <a class="pcard" href="https://tubalcainmy.github.io/8-gate/" target="_blank" rel="noopener">
+      <a class="pcard" id="p-8gate" href="https://tubalcainmy.github.io/8-gate/" target="_blank" rel="noopener">
         <img class="pcard-shot" src="assets/shot-8gate.jpg" alt="Tubalcain 8-Gate Lead Qualifier screenshot" loading="lazy">
         <span class="ptag">Solar · Lead Generation</span>
         <div class="stat-highlight">⚡ Filters 65%+ of unqualified leads · Lifts close rate from &lt;10% to 38% · Delivers verified buyers in under 1 second</div>
         <h3>Tubalcain 8-Gate Lead Qualifier</h3>
         <p>Solar installers were spending hours calling people who could not afford solar, did not own their property, or had no install timeline. This engine screens every homeowner across 13 questions and 8 gates,  eliminating dead leads before any contact is made.</p>
         <div class="bafter"><div class="bafter-col before"><div class="bafter-label">Before</div><ul><li>Calling 100 leads to close 3</li><li>Renters and browsers in pipeline</li><li>Hours wasted on dead calls</li><li>Industry close rate under 10%</li></ul></div><div class="bafter-col after"><div class="bafter-label">After</div><ul><li>38% average close rate</li><li>₦1.5M+ budget confirmed per lead</li><li>90-day timeline and ownership confirmed</li><li>Delivered to WhatsApp in under 1 second</li></ul></div></div>
+        <div class="pfor"><strong>For your business:</strong> if your sales team wastes hours on leads that never buy, I can build the same screening for your industry.</div>
         <div class="pstack"><span class="pill">HTML/JS</span><span class="pill">GA4</span><span class="pill">Facebook Pixel</span><span class="pill">Make.com</span><span class="pill">Kudisms</span><span class="pill">GitHub Pages</span></div>
         <span class="plink">View live system →</span>
       </a>
 
-      <a class="pcard" href="https://swiftfifteenexpress.com/" target="_blank" rel="noopener">
+      <a class="pcard" id="p-swift" href="https://swiftfifteenexpress.com/" target="_blank" rel="noopener">
         <img class="pcard-shot" src="assets/shot-swiftfifteen.jpg" alt="Swift Fifteen Express screenshot" loading="lazy">
         <span class="ptag">Logistics · Delivery</span>
         <div class="stat-highlight">🛵 Order to rider dispatch in under 60 seconds · Zero back-and-forth calls · Zero manual overhead · 9 platforms integrated</div>
         <h3>Zero-Human-Intervention Dispatch Engine</h3>
         <p>Managing logistics manually means missed deliveries, rider disputes, and delayed payments. This engine eliminates the entire manual loop:  distance calculated instantly via Google Maps, payment collected via Paystack, rider dispatched via Kwikpik,  all triggered automatically the moment an order is placed.</p>
         <div class="bafter"><div class="bafter-col before"><div class="bafter-label">Before</div><ul><li>Manual calls to confirm every order</li><li>Rider disputes over distances</li><li>Payment collected separately</li><li>Human error on every dispatch</li></ul></div><div class="bafter-col after"><div class="bafter-label">After</div><ul><li>Order to dispatch in under 60s</li><li>Google Maps auto-calculates distance</li><li>Paystack payment before dispatch fires</li><li>Zero human steps · 11 automated stages</li></ul></div></div>
+        <div class="pfor"><strong>For your business:</strong> if your orders still run on phone calls, I can automate the path from order to payment to delivery.</div>
         <div class="pstack"><span class="pill">Paystack</span><span class="pill">Kwikpik API</span><span class="pill">Google Maps</span><span class="pill">Make.com</span><span class="pill">Vercel</span></div>
         <span class="plink">View live platform →</span>
       </a>
 
-      <a class="pcard flagship" href="https://ceagroup.org/" target="_blank" rel="noopener">
+      <a class="pcard flagship" id="p-cea" href="https://ceagroup.org/" target="_blank" rel="noopener">
         <img class="pcard-shot" src="assets/shot-cea.jpg" alt="Castlerock Econetwork Africa screenshot" loading="lazy">
         <span class="ptag integrity">🏆 Flagship · Trust &amp; Market Infrastructure · PropTech</span>
         <p class="flagship-hook">The primary hurdle in Nigerian real estate is not demand;  it is a massive trust deficit caused by fake titles, double allocations, and broken promises. This marketplace was engineered to replace blind trust with document-by-document verified transparency.</p>
@@ -717,17 +804,19 @@ footer{
           <div class="flagship-metric solution"><strong>The Fix</strong><p>Cryptographically signed HMAC-SHA256 listing links  time-limited, mathematically unforgeable. Full automated verification pipeline. Live within hours. Zero manual steps.</p></div>
         </div>
         <div class="bafter"><div class="bafter-col before"><div class="bafter-label">Before</div><ul><li>Fraudulent and duplicate listings</li><li>Manual verification  days of delay</li><li>No audit trail on seller actions</li><li>Buyers with zero confidence</li></ul></div><div class="bafter-col after"><div class="bafter-label">After</div><ul><li>Cryptographically signed  unforgeable</li><li>Automated pipeline  live within hours</li><li>Immutable audit trail per listing</li><li>Document-by-document buyer transparency</li></ul></div></div>
+        <div class="pfor"><strong>For your business:</strong> if your customers need proof before they pay, whether for property, vehicles or other high-value purchases, I can build verification into your platform.</div>
         <div class="pstack"><span class="pill">Cloudflare Workers</span><span class="pill">Cloudflare R2</span><span class="pill">HMAC-SHA256</span><span class="pill">Make.com</span><span class="pill">Google Sheets</span></div>
         <span class="plink" style="color:#059669;">View live marketplace &rarr;</span>
       </a>
 
-      <a class="pcard" href="https://richiesplatform.github.io/richiesplatform/community" target="_blank" rel="noopener">
+      <a class="pcard" id="p-richies" href="https://richiesplatform.github.io/richiesplatform/community" target="_blank" rel="noopener">
         <img class="pcard-shot" src="assets/shot-richies.jpg" alt="RichiesPlatform screenshot" loading="lazy">
         <span class="ptag">EdTech · Sales Funnel</span>
         <div class="stat-highlight">💳 Recovers leads lost to checkout abandonment · 3 segmented audience tracks · ₦10k–₦50k tiered pricing · Serverless  handles traffic spikes at ₦0</div>
         <h3>Multi-Step Behavioural Sales Funnel  RichiesPlatform</h3>
         <p>Generic checkouts lose 70% of users because the offer does not match the buyer. This system segments visitors by identity at entry:  Business Owner, Freelancer, Student,  and serves each a personalised offer. A Make.com webhook fires at checkout_started, capturing intent before payment, so no lead is ever lost to abandonment.</p>
         <div class="bafter"><div class="bafter-col before"><div class="bafter-label">Before</div><ul><li>Generic checkout  same page for everyone</li><li>70% cart abandonment  no recovery</li><li>Leads lost on payment failure</li><li>No buyer segmentation</li></ul></div><div class="bafter-col after"><div class="bafter-label">After</div><ul><li>3 personalised tracks by buyer type</li><li>Lead captured at checkout_started</li><li>Zero intent lost to abandonment</li><li>Serverless  ₦0 server cost</li></ul></div></div>
+        <div class="pfor"><strong>For your business:</strong> if people reach your checkout and leave, I can build a funnel that matches the offer to the buyer and catches every drop-off.</div>
         <div class="pstack"><span class="pill">Paystack</span><span class="pill">Make.com</span><span class="pill">GA4</span><span class="pill">Meta Pixel</span><span class="pill">Visitor Segmentation</span></div>
         <span class="plink">View live funnel →</span>
       </a>
@@ -762,6 +851,27 @@ footer{
         </tr>
       </tbody>
     </table>
+    </div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<div class="section-divider"></div>
+<section id="process">
+  <div class="wrap">
+    <p class="eyebrow">How I Work</p>
+    <h2>From First Call<br>to a Working System.</h2>
+    <p class="section-sub">Every business leaks money in a different place, so every project starts by finding yours.</p>
+    <ol class="steps">
+      <li class="step"><h3>Free audit</h3><p>A 30-minute call where I look at your funnel, booking flow or checkout and show you exactly where you're losing money. <a href="https://calendly.com/tubalcain-my/30min" target="_blank" rel="noopener">Book it here.</a></p></li>
+      <li class="step"><h3>Plan and quote</h3><p>I map the system your business needs, what it will do and what it will cost. You get a clear quote before any work starts.</p></li>
+      <li class="step"><h3>Build</h3><p>I build and connect everything: payments, forms, CRM, SMS, WhatsApp and tracking. Then I test it end to end with real scenarios.</p></li>
+      <li class="step"><h3>Handover and training</h3><p>I train your team to run the system, so it keeps working without depending on me.</p></li>
+    </ol>
+    <div class="terms">
+      <div class="term"><div class="term-k">Turnaround</div><div class="term-v">7 to 30 days</div><div class="term-s">Depends on the size of the system</div></div>
+      <div class="term"><div class="term-k">Pricing</div><div class="term-v">Quoted per project</div><div class="term-s">Based on what we scope in your audit</div></div>
+      <div class="term"><div class="term-k">Running costs</div><div class="term-v">Kept low</div><div class="term-s">My live systems run at ₦0 monthly server cost</div></div>
     </div>
   </div>
 </section>
@@ -830,6 +940,34 @@ footer{
   </div>
 </div>
 
+<!-- ABOUT -->
+<div class="section-divider"></div>
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h2>Building Blocks Were My<br>First Programming Language.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I grew up in <strong>Delta State, Nigeria</strong>, in a home where both parents were entrepreneurs. From a young age, I was watching how things worked and asking how I could build something better.</p>
+        <p>When I was a boy, my father gave me building blocks,  and those toys shaped everything. I could build anything I could imagine. That instinct to construct a solution from available pieces has never left me.</p>
+        <blockquote>"As much as I can imagine it, I could build it."</blockquote>
+        <p>After university at <strong>Delta State University of Science and Technology</strong>, I spent two years in a personal development programme that transformed me. I found my direction: creative thinking and systems design applied to real business problems. That led to <strong>Tubalcain Ads Enterprise</strong>  and eventually to Go-to-Market Engineering as a discipline I now apply across industries.</p>
+        <p>I'm also an educator. I train people on digital marketing and automation, and through <strong>RichiesPlatform</strong> I'm building a community of marketers who deliver real results in their careers and their own businesses. It's also why the teams I build for can run their systems without depending on me or my technical team.</p>
+        <p>My drive is simple. I am here to serve,  channelling ideas into systems that solve business challenges. There is no greater feeling than watching a system I built perform exactly as I designed it.</p>
+      </div>
+      <div class="skills-grid">
+        <p class="skills-h">What I'm good at</p>
+        <div class="skill-card"><div class="skill-card-t">Finding where money leaks</div><div class="skill-card-d">I audit funnels, booking flows and checkouts to find where leads, bookings and payments drop off.</div><div class="skill-tools">GA4 funnels · Facebook Pixel · Conversion analysis</div></div>
+        <div class="skill-card"><div class="skill-card-t">Designing the customer journey</div><div class="skill-card-d">I map every step from a stranger's first click to a paid order, then remove the friction.</div><div class="skill-tools">Funnel design · Buyer segmentation</div></div>
+        <div class="skill-card"><div class="skill-card-t">Connecting your tools</div><div class="skill-card-d">Payments, maps, delivery, forms, SMS and WhatsApp working together as one system.</div><div class="skill-tools">Paystack · Kwikpik · Google Maps · Make.com · Webhooks</div></div>
+        <div class="skill-card"><div class="skill-card-t">Qualifying and following up</div><div class="skill-card-d">Filtering out buyers who won't convert, and bringing back the ones who went quiet.</div><div class="skill-tools">Qualification engines · Facebook ads · SMS sequences</div></div>
+        <div class="skill-card"><div class="skill-card-t">Building trust into platforms</div><div class="skill-card-d">Verification, tamper-proof links and audit trails for markets where buyers need proof.</div><div class="skill-tools">Cloudflare Workers · R2 · HMAC-SHA256</div></div>
+        <div class="skill-card"><div class="skill-card-t">Low-cost, reliable hosting</div><div class="skill-card-d">Systems that handle traffic spikes without monthly server bills.</div><div class="skill-tools">GitHub Pages · Cloudflare · Vercel serverless</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <div class="section-divider"></div>
 <section id="contact">
@@ -890,6 +1028,13 @@ function handleContact(e){
   setTimeout(()=>window.open('https://wa.me/2348029234994?text='+msg,'_blank'),400);
   setTimeout(()=>{btn.textContent='Send message →';btn.style.background='';e.target.reset();},3500);
 }
+(function(){
+  const nav=document.querySelector('nav'), btn=document.querySelector('.nav-toggle');
+  function set(open){nav.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);btn.setAttribute('aria-label',open?'Close menu':'Open menu');}
+  btn.addEventListener('click',()=>set(!nav.classList.contains('open')));
+  nav.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>set(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
+})();
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     const t=document.querySelector(a.getAttribute('href'));
